@@ -50,7 +50,7 @@ int refcnt = 0;
 acn_protect_t 
 acn_port_protect(void)
 {
-  if (!refcnt == 0) {
+  if (refcnt != 0) {
     /* Set the mutex as a recursive mutex */
     pthread_mutexattr_settype(&mutexattr, PTHREAD_MUTEX_RECURSIVE);
     /* create the mutex with the attributes set */

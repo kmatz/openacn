@@ -1126,7 +1126,7 @@ sdt_tick(void *arg)
             channel->mak_ms = 0;
           }
           /* If we have members and the leader is local, send MAK if mak time out     */
-          if ((channel->mak_ms == 0)) {
+          if (channel->mak_ms == 0) {
             sdt_tx_mak_all(component);
             channel->mak_ms = FOREIGN_MEMBER_MAK_TIME_ms;
             /* reset timer on all members */
